@@ -1,0 +1,61 @@
+% LaTeX Template for USAJobs resume builder-style federal resume with cleaner formatting
+%
+% Template includes all sections and fields from the USAJobs resume builder as of August 2023
+% Recommend that you fill out the resume builder first, save the PDF, and then use that info to populate this template
+%
+% This template has been modified from and includes elements of the following templates:
+% Jake's Resume (https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs)
+%
+% Academic CV Template (https://www.overleaf.com/latex/examples/academic-cv-template/hvjpfjnyggbf)
+% 
+% AutoCV (https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb)
+%
+% Modified by Teresa Symons (tasymons.github.io)
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,12pt]{fed-res} % See the fed-res.cls file to import packages and edit formatting/stsyle
+\begin{document}
+%-------------------------------------------------------------------------------
+%	HEADING INFORMATION
+%-------------------------------------------------------------------------------
+\begin{raggedleft}
+    \textbf{\color{Maroon} \Huge \scshape Joshiwa van Marrewijk} \\ \vspace{1mm}
+    {\small PO Box 9513, 2300 RA Leiden, the Netherlands \\
+     Leiden Observatory \ $|$ \ \url{marrewijk@strw.leidenuniv.nl} \\ \ \textbf{Find me on:} \url{https://www.joshiwa.com}\\ }
+\end{raggedleft}
+
+%-------------------------------------------------------------------------------
+%	RESUME CONTENT
+%   These are the sections from the USAJobs resume builder
+%	Each section is imported separately
+%   Open each file in 'Resume Sections' to modify content
+%   Comment out or delete any sections that you do not wish to include
+%-------------------------------------------------------------------------------
+
+% %-----------RESEARCH INTEREST------------
+\input{Resume Sections/Research Interest}
+
+%-----------EDUCATION----------- 
+\input{Resume Sections/Education}
+
+%-----------OBSERVATIONAL EXPERTISE-----------
+\input{Resume Sections/Observational Expertise}
+
+% %-----------TECHNICAL EXPERTISE-----------
+% \input{Resume Sections/Technical expertise}
+
+%-----------Visits-----------
+\input{Resume Sections/Conferences_condensed}
+
+%-----------ADDITIONAL INFORMATION-----------
+\input{Resume Sections/consortia}
+
+%-----------ADDITIONAL INFORMATION-----------
+\input{Resume Sections/Additional Information}
+
+%-----------PROFESSIONAL PUBLICATIONS-----------
+% \input{Resume Sections/Professional Publications}
+
+\end{document}
