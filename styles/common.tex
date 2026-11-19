@@ -18,3 +18,5 @@
 \newcommand{\cvlink}[2]{\href{#1}{\underline{#2}}}   % visibly clickable link
 \newcommand{\cvdur}[1]{\textcolor{muted}{\small\textbullet{} #1\,min}}
 \newcommand{\EUR}[1]{\texteuro#1}
+% Clickable but visually unmarked link (e.g. a talk recording); the pointer changes on hover
+\newcommand{\hiddenlink}[2]{{\hypersetup{urlcolor=.}\href{#1}{#2}}}
