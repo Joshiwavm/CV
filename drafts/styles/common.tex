@@ -1,0 +1,19 @@
+% Shared setup for all draft styles. Compile with LuaLaTeX (Overleaf: Menu > Compiler > LuaLaTeX).
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=accent]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{8C1D2F}   % maroon, close to the current CV
+\definecolor{muted}{HTML}{6B6B6B}
+\definecolor{rulegray}{HTML}{BBBBBB}
+\newcommand{\tbd}[1]{\textcolor{red}{#1}}   % placeholder that still needs checking
+\newcommand{\cvsep}{\enspace\textcolor{muted}{\textbar}\enspace}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\raggedbottom
+\usepackage{needspace}
+\newcommand{\cvlink}[2]{\href{#1}{\underline{#2}}}   % visibly clickable link
+\newcommand{\cvdur}[1]{\textcolor{muted}{\small\textbullet{} #1\,min}}

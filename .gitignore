@@ -1,0 +1,11 @@
+# LaTeX build files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.bcf
+*.run.xml
+*.synctex.gz
+# editor history
+.history/

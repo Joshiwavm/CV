@@ -1,0 +1,50 @@
+# Compiles the condensed CV on every push to main (from this repo or via Overleaf's
+# GitHub sync) and publishes it to GitHub Pages: https://joshiwavm.github.io/CV/
+name: Build and publish CV
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile CV (LuaLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: CV_condensed.tex
+          working_directory: drafts
+          latexmk_use_lualatex: true
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp site/index.html _site/
+          cp drafts/CV_condensed.pdf _site/vanMarrewijk_CV.pdf
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
