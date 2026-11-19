@@ -9,3 +9,5 @@
 *.synctex.gz
 # editor history
 .history/
+build/
+__pycache__/

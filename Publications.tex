@@ -1,0 +1,17 @@
+% Publication list -- compile with LuaLaTeX.
+% The list itself (publications_list.tex) is generated from publications.bib by
+%   python3 scripts/make_publications.py
+\input{styles/B2_airy}
+\input{styles/journals}
+\begin{document}
+\cvheader{Joshiwa van Marrewijk}
+  {Publications}
+  {\href{mailto:marrewijk@strw.leidenuniv.nl}{marrewijk@strw.leidenuniv.nl}
+   \cvsep More details at \href{https://www.joshiwa.com}{joshiwa.com}}
+
+\cvpara{Grouped by my position in the author list and sorted newest first. Compiled from
+\cvlink{https://ui.adsabs.harvard.edu/search/q=author\%3A\%22van\%20Marrewijk\%2C\%20J.\%22}{NASA/ADS}.}
+
+\cvsection{Publications}
+\input{publications_list}
+\end{document}
