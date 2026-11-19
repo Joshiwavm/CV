@@ -11,3 +11,7 @@
 .history/
 build/
 __pycache__/
+# local-only build tooling and output (CI builds the published PDFs)
+build.sh
+pdf/
+.DS_Store

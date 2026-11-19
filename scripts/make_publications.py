@@ -3,12 +3,12 @@
 
 Usage
 -----
-  python3 scripts/make_publications.py                 # reads publications.bib
+  python3 scripts/make_publications.py                 # reads content/publications.bib
   python3 scripts/make_publications.py --fetch         # first downloads it from ADS
                                                        #   (needs env var ADS_API_TOKEN)
 
 How to refresh by hand: run the ADS/SciX search for author:"van Marrewijk, J.",
-select all -> Export -> BibTeX, and save the result as publications.bib in the repo root.
+select all -> Export -> BibTeX, and save the result as content/publications.bib.
 
 Output: entries are grouped by my position in the author list
 (1st, 2nd, 3rd, other) and sorted newest first within each group.
@@ -23,8 +23,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BIB = ROOT / "publications.bib"
-OUT = ROOT / "publications_list.tex"
+BIB = ROOT / "content" / "publications.bib"
+OUT = ROOT / "content" / "publications_list.tex"
 QUERY = 'author:"van Marrewijk, J."'
 NAME_RE = re.compile(r"marrewijk", re.IGNORECASE)
 MONTHS = {m: i for i, m in enumerate(
