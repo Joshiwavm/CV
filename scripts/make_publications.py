@@ -156,7 +156,9 @@ def fmt_authors(authors: list[str], pos: int) -> str:
     s = ", ".join(shown)
     if len(names) > MAX_AUTHORS or truncated:
         s += ", et al."
-        n_tot = f"{len(names)}+" if truncated else str(len(names))
+        # SciX caps exports at a maximum author count without saying so: if I am
+        # not in the list, it was cut off, so report the count as a lower bound.
+        n_tot = f"{len(names)}+" if (truncated or pos == 0) else str(len(names))
         note = f"{n_tot} authors"
         if (pos == 0 or pos > 3) and is_alphabetical(names):   # only relevant for co-author papers
             note += ", alphabetical"
